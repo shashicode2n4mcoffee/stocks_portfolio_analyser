@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import "./Portfolio.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,10 +9,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 
-import faker from 'faker';
+import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -25,38 +26,48 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
-  scales:{
-    y:{
-      position:'right'
-    }
-  },
-  plugins: {
-    legend: {
-      position: 'top',
-    },
-    title: {
-      display: true,
-      text: 'Portfolio Performance',
+  scales: {
+    y: {
+      position: "right",
     },
   },
+  // plugins: {
+  //   legend: {
+  //     position: 'top',
+  //   },
+  //   title: {
+  //     display: true,
+  //     text: 'Portfolio Performance',
+  //   },
+  // },
 };
 
-const Portfolio = ({finalData}) => {
+const Portfolio = ({ finalData }) => {
   return (
-    <div>
-     {finalData.finalDates ? <Line options={options} data={{
-       labels : finalData.finalDates.map((item)=>(item)),
-       datasets: [
-         {
-           label: 'Portfolio',
-           data:  finalData.finalValueArr.map((item)=>(item)),
-           borderColor: 'rgb(255, 99, 132)',
-           backgroundColor: 'rgba(255, 99, 132, 0.5)',
-           },
-        ],
-     }} height={500} width={1000}/> : ""}
+    <div className="portfolio">
+      <h3>Portfolio Performace</h3>
+      {finalData.finalDates ? (
+        <Line
+          options={options}
+          data={{
+            labels: finalData.finalDates.map((item) => item),
+            datasets: [
+              {
+                label: "Portfolio",
+                data: finalData.finalValueArr.map((item) => item),
+                borderColor: "rgb(255, 99, 132)",
+                backgroundColor: "rgba(255, 99, 132, 0.5)",
+              },
+            ],
+          }}
+          height={500}
+          width={1000}
+        />
+      ) : (
+        ""
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

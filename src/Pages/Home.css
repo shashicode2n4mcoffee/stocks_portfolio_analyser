@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.home-cart-stocks {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-column-gap: 2rem;
+}
+
+h1 {
+  padding-bottom: 2rem;
+}

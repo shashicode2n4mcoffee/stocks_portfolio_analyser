@@ -1,0 +1,18 @@
+.stocks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 0.5rem;
+}
+
+h3 {
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}

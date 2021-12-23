@@ -1,14 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.app {
-  width: 90vw;
+.portfolio {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0 auto;
-  margin-top: 2rem;
 }
+
+/* h3 {
+  margin: 0 auto;
+} */
